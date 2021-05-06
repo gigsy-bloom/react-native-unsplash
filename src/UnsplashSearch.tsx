@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as React from 'react';
 import {
   ActivityIndicator,
@@ -130,12 +129,13 @@ export default class UnsplashSearch extends React.Component<
     this.setState({ querying: page === 1 });
     const { accessKey, photosPerPage } = this.props;
     const url = `https://api.unsplash.com/search/photos?client_id=${accessKey}&query=${query}&page=${page}&per_page=${photosPerPage}`;
-    const res = await axios.get(url);
+    const res = await fetch(url);
+    const json = await res.json()
     if (page === 1) {
-      this.setState({ photos: res.data.results, querying: false });
+      this.setState({ photos: json.results, querying: false });
       return;
     }
-    const newPhotos = this.state.photos.concat(res.data.results);
+    const newPhotos = this.state.photos.concat(json.results);
     const result = [];
     const map = new Map();
     for (const item of newPhotos) {
