@@ -14,7 +14,10 @@ import {
   TextInputProps,
   TouchableOpacity,
   View,
+  Dimensions
 } from 'react-native';
+
+const {width, height} = Dimensions.get('screen');
 
 const LightGray = '#f5f6fa';
 
@@ -253,6 +256,7 @@ export default class UnsplashSearch extends React.Component<
         data={this.state.photos}
         keyExtractor={photo => photo.id}
         onEndReached={this.onEndReached}
+        numColumns={2}
         renderItem={({ item: photo }) => {
           return (
             <TouchableOpacity
@@ -359,8 +363,8 @@ const styles = StyleSheet.create({
   },
   photoTouchable: {
     flex: 1,
-    width: '100%',
-    height: 200,
+    width: width * 0.45,
+    height: height * 0.1,
     borderRadius: 5,
     overflow: 'hidden',
     marginBottom: 10,
