@@ -337,7 +337,7 @@ const styles = StyleSheet.create({
   },
   searchBarCont: {
     height: 64,
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     justifyContent: 'center',
   },
   searchBar: {
@@ -355,7 +355,7 @@ const styles = StyleSheet.create({
   searchSideComponent: {},
   photosListCont: {
     flex: 1,
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
   },
   photo: {
     width: '100%',
@@ -363,11 +363,12 @@ const styles = StyleSheet.create({
   },
   photoTouchable: {
     flex: 1,
-    width: width * 0.45,
-    height: height * 0.1,
-    borderRadius: 5,
+    width: width * 0.4,
+    height: height * 0.2,
+    borderRadius: 4,
     overflow: 'hidden',
     marginBottom: 10,
+    marginHorizontal: 2,
   },
   authorNameCont: {
     position: 'absolute',
